@@ -3,9 +3,9 @@ TimedMessages Plugin
 ## Motivation
 There are some problems with Session::flash() |<- my opinion
 
-1. you have to call $this->Session->flash('messageType');, for every single messageType.
+1. you have to call ```$this->Session->flash('messageType');```, for every single messageType.
 2. the flashmessages are shown afterRender(), so after i couple of minutes you can't be sure whether the message is new or old(no Page reload for a while)
-3. if you don't have a $this->Session->flash('messageType') in every layout/view a flashmessage can be displayed when it's already out-dated
+3. if you don't have a ```$this->Session->flash('messageType')``` in every layout/view a flashmessage can be displayed when it's already out-dated
 
 ### Tasks
 - [x] automagical display of ALL flashMessages
@@ -14,15 +14,15 @@ There are some problems with Session::flash() |<- my opinion
 
 ## Installation
 1. move the Plugin 'TimedMessages' in you app/Plugin folder && move tm.css to /webroot/css && move tm.js to /webroot/js
-2. load the Plugin in your bootstrap.php CakePlugin::load('TimedMessages');
+2. load the Plugin in your bootstrap.php ```CakePlugin::load('TimedMessages');```
 3. load TimedMessages Component in every Controller u want to use it (or AppController)
 ```php
 public $components = array('TimedMessages.TimedMessage');
 ```
-4. u need to have a minimal Configuration in your apps bootstrap or simply load the plugins via CakePlugin::load(array('TimedMessages'=>array('bootstrap'=>true)));
+4. u need to have a minimal Configuration in your apps bootstrap or simply load the plugins via ```CakePlugin::load(array('TimedMessages'=>array('bootstrap'=>true)));```
 
 ### minimal Configuration
-```php
+```
 Configure::write('TimedMessage',array(
 			'config'=>array(
 				'target'=>'<body>',
