@@ -1,0 +1,85 @@
+@import 'tmcolors';
+.timedMessage{
+  position: relative;
+  margin: 0 auto 20px auto;
+  padding: 15px 15px;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow:0 1px 1px rgba(0,0,0,0.7);
+  opacity: 1;
+  display: block;
+  font-weight: bold;
+}
+@keyframes fadeOut {
+    0%  { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; transform: translateY(0px);}
+    99% { opacity: 0; transform: translateY(-30px);}
+    100% { opacity: 0;}
+}
+@keyframes runProgress {
+    0%  { width: 0%; background: rgba(255,255,255,0.3); }
+    100% { width: 96%; background: rgba(255,255,255,1); }
+}
+.tm-progress {
+    width: 0;height: 4px;background: rgba(255,255,255,0.3);position: absolute;bottom: 5px;left: 2%;border-radius: 3px;box-shadow:inset 0 1px 1px rgba(0,0,0,0.05),0 -1px 0 rgba(255,255,255,0.6);
+}
+.tm-active:hover,.tm-active:hover .tm-progress{
+  animation-play-state: paused;
+}
+/* container for comeback link*/
+#tm-cb-container{
+  position:fixed;
+  top: 10px;
+  left: 10px;
+}
+/* comeback link style */
+.tm-cb{
+  display:relative;
+  float:left;
+  display:inline-block;
+  text-align:center;
+  height:40px;
+  width:40px;
+  margin-right:4px;
+  box-shadow:inset 0 1px 1px rgba(0,0,0,0.05),0 -1px 0 rgba(255,255,255,0.6);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.8em transparent;
+  transform: translate3d(0, 0, 0);
+  transition: box-shadow .6s ease-in-out;
+}
+.tm-cb:after{
+  position:absolute;
+  content: '!';
+  display:inline-block;
+  text-align:center;
+  width:100%;
+  font-size:40px;
+  line-height: 100%;
+  vertical-align: middle;
+  font-weight:800;
+  left:0;
+}
+.tm-cb:hover{
+  box-shadow: 0 0 0px 0px rgba(255,255,255,0.2);
+  transition: box-shadow .4s ease-in-out;
+}
+.tm-close{
+  position:absolute;
+  background:url('./../img/tm-cross.png') no-repeat;
+  top:3px;
+  right:3px;
+  background-color:#fff;
+  cursor:pointer;
+  text-align:center;
+  height:16px;
+  width:16px;
+  box-shadow:
+        inset 0 1px 1px rgba(0,0,0,0.05),
+        0 -1px 0 rgba(255,255,255,0.6);
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+}
