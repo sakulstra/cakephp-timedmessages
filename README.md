@@ -2,6 +2,7 @@ TimedMessages Plugin
 ====================
 ## Motivation
 There are some problems with Session::flash() |<- my opinion
+
 1. you have to call $this->Session->flash('messageType');, for every single messageType.
 2. the flashmessages are shown afterRender(), so after i couple of minutes you can't be sure whether the message is new or old(no Page reload for a while)
 3. if you don't have a $this->Session->flash('messageType') in every layout/view a flashmessage can be displayed when it's already out-dated
